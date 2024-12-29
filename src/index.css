@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+ 
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+ 
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+ 
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+ 
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+ 
+    --radius: 0.75rem;
+  }
+ 
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+ 
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+ 
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+ 
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+ 
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+ 
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+ 
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+ 
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  .prose {
+    @apply max-w-[65ch] mx-auto text-gray-700 leading-relaxed text-lg;
+  }
+
+  .prose pre {
+    @apply bg-gray-900 text-white p-6 rounded-lg overflow-x-auto my-12 text-[15px] leading-relaxed font-mono;
+  }
+
+  .prose code {
+    @apply bg-gray-100 px-2 py-0.5 rounded text-gray-900 text-[15px] font-mono;
+  }
+
+  .prose pre code {
+    @apply bg-transparent p-0 text-white;
+  }
+
+  .prose figure {
+    @apply my-12;
+  }
+
+  .prose figure img {
+    @apply w-full rounded-lg shadow-lg;
+  }
+
+  .prose figure figcaption {
+    @apply mt-4 text-center text-sm text-gray-500;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-primary pl-6 py-4 italic text-gray-600 my-12 text-lg bg-gray-50 rounded-r-lg;
+  }
+
+  .prose a {
+    @apply text-primary hover:text-primary/80 no-underline border-b border-primary/30 hover:border-primary/80 transition-colors;
+  }
+
+  .prose ul {
+    @apply list-disc pl-8 space-y-3 my-8 marker:text-primary/60;
+  }
+
+  .prose ol {
+    @apply list-decimal pl-8 space-y-3 my-8 marker:text-primary/60;
+  }
+
+  .prose h2 {
+    @apply text-3xl font-bold mt-16 mb-8 text-gray-900;
+  }
+
+  .prose h3 {
+    @apply text-2xl font-bold mt-12 mb-6 text-gray-900;
+  }
+
+  .prose p {
+    @apply mb-8 text-gray-700 leading-relaxed text-lg tracking-normal;
+  }
+
+  .prose li {
+    @apply text-gray-700 leading-relaxed text-lg;
+  }
+
+  .prose li::marker {
+    @apply text-primary/60;
+  }
+
+  .prose hr {
+    @apply my-12 border-gray-200;
+  }
+
+  .prose table {
+    @apply w-full my-12 text-left border-collapse;
+  }
+
+  .prose th {
+    @apply p-4 text-sm font-semibold text-gray-900 bg-gray-50 border-b border-gray-200;
+  }
+
+  .prose td {
+    @apply p-4 text-sm text-gray-700 border-b border-gray-200;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
